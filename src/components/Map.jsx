@@ -49,10 +49,11 @@ const Map = () => {
   };
 
   useEffect(() => {
+    getTaxi(timeNow)
+    setCenter([1.34000, 103.82000])
     const clockInterval = setInterval(() => {
       setTime(apiDateString(new Date()));
-    }, 1000);
-    getTaxi(timeNow)
+    }, 60000);
     const apiFetchInterval = setInterval(() => {
       getTaxi(timeNow);
     }, 60000);
@@ -60,7 +61,8 @@ const Map = () => {
       clearInterval(clockInterval)
       clearInterval(apiFetchInterval)
     };
-  }, []);
+  }, [timeNow]);
+ 
 
   return (
     <div id="mapid">
