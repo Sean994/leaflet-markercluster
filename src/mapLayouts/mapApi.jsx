@@ -16,4 +16,8 @@ const oneMap = {
     attribution: '<img src="https://docs.onemap.sg/maps/images/oneMap64-01.png" style="height:20px;width:20px;"/> New OneMap | Map data &copy; contributors, <a href="http://SLA.gov.sg">Singapore Land Authority</a>'
 }
 
-export { jawgMap , defaultMap , oneMap }
+const hereApi = {
+    apiKey : 'uNAkp3A6Cxt2gEfx5jOBafT1FF53HP_uyjyrK0Q9K0s'
+}
+
+export { jawgMap , defaultMap , oneMap , hereApi }
