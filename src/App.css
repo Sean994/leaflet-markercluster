@@ -38,7 +38,7 @@
 }
 
 #mapid {
-  height: 95vh;
+  height: 93vh;
   width: 100vw;
   position: absolute;
   bottom: 0px;
@@ -46,31 +46,80 @@
 
 #dataViz {
 
-    height: 95vh;
+    height: 93vh;
     width: 100vw;
     position: absolute;
     bottom: 0px;
   
 }
 .leaflet-container {
-  height: 95vh;
+  height: 93vh;
   width: 100vw;
   z-index: 1;
 }
 .markercluster-map {
-  height: 95vh;
+  height: 93vh;
 }
 .NavBar{
-  height: 5vh;
+  height: 7vh;
   width: 100vw;
   position: absolute;
   top: 0px;
   z-index: 100;
 
   display: flex;
-  background: pink;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #24252a;
 }
 
-.NavBar span {
-  margin: 0 20px;
+.NavBar .logo {
+  padding: 9px 25px;
+  color: orange;
+  font-family: 'Staatliches', cursive;
+  font-size: 40px;
+  border: none;
+  border-radius: 50px;
+  margin-left: 1%;
 }
+
+.NavBar .dataTooltip {
+  display: flex;
+  justify-content: space-between;
+  width: 42%;
+  padding: 5px 40px;
+  color: #edf0f1;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  background-color: #4d7bd6;
+  border: none;
+  border-radius: 50px;
+}
+
+.NavBar .links {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  display: inline;
+  transition: all 0.3s ease 0s;
+  color: #edf0f1;
+  font-family: 'Staatliches', cursive;
+  /* font-weight: bold; */
+  margin-right: 3%;
+  font-size: 36px;
+}
+
+.links span {
+  margin: 30px;
+}
+
+.NavBar .links:hover{
+  color: orange;
+}
+
+.NavBar a:link,
+.NavBar a:visited {
+  text-decoration: none;
+  color: #edf0f1;
+}
+

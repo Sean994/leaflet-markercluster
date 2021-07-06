@@ -1,15 +1,30 @@
 import "../App.css";
 import React from "react";
-import { MapContainer, LayersControl, TileLayer, CircleMarker } from "react-leaflet";
-import MarkerClusterGroup from 'react-leaflet-markercluster';
-import { jawgMap , oneMap } from "../mapLayouts/mapApi";
+import L from 'leaflet';
+import {
+  MapContainer,
+  LayersControl,
+  TileLayer,
+  Marker,
+} from "react-leaflet";
+import MarkerClusterGroup from "react-leaflet-markercluster";
+import { jawgMap, oneMap } from "../mapLayouts/mapApi";
+import TaxiIcon from "../mapLayouts/taxiIcon.png"
 import MarkerLocate from "./3MapMarker";
+import TaxiStands from "./3TaxiStand";
+import SurchargeBounds from "./3Surcharge";
+
 
 const Map = (props) => {
-  const {data} = props
-  const { BaseLayer } = LayersControl
-  const center = [1.34000, 103.82000]
-  
+  const { data } = props;
+  const { BaseLayer , Overlay } = LayersControl;
+  const center = [1.34, 103.82];
+  const taxiIcon = new L.Icon({
+    iconUrl: TaxiIcon,
+    iconSize: [25, 25]
+
+});
+
   return (
     <div id="mapid">
       <MapContainer
@@ -18,7 +33,10 @@ const Map = (props) => {
         zoom={12}
         maxZoom={18}
         minZoom={11}
-        maxBounds={[ [1.15, 103.4] , [1.53, 104.2] ]}
+        maxBounds={[
+          [1.15, 103.4],
+          [1.53, 104.2],
+        ]}
         preferCanvas={true}
         doubleClickZoom={false}
       >
@@ -30,25 +48,30 @@ const Map = (props) => {
               url={jawgMap.darkUrl + jawgMap.token}
             />
           </BaseLayer>
-          <BaseLayer name="Dark Map + MRT Lines">
-            <TileLayer attribution={oneMap.attribution} url={oneMap.darkUrl} />
-          </BaseLayer>
           <BaseLayer name="Light Map">
             <TileLayer
               attribution={jawgMap.attribution}
               url={jawgMap.lightUrl + jawgMap.token}
             />
-          </BaseLayer> 
+          </BaseLayer>
+          <BaseLayer name="Show MRT">
+            <TileLayer attribution={oneMap.attribution} url={oneMap.darkUrl} />
+          </BaseLayer>
+          <Overlay name="Available Taxis" checked>
+            <MarkerClusterGroup>
+              {data.taxiCoords.map((taxi, index) => (
+                <Marker
+                  icon={taxiIcon}
+                  key={index}
+                  position={[taxi[1], taxi[0]]}
+                  center={[taxi[1], taxi[0]]}
+                ></Marker>
+              ))}
+            </MarkerClusterGroup>
+          </Overlay>
+          <TaxiStands />
+          <SurchargeBounds />
         </LayersControl>
-
-     
-        <MarkerClusterGroup>
-            {data.taxiCoords.map((taxi, index) => (
-            <CircleMarker key = {index} position={[taxi[1], taxi[0]]}
-            center = {[taxi[1], taxi[0]]}
-            ></CircleMarker>
-          ))}
-        </MarkerClusterGroup>
       </MapContainer>
       {/* ----------------------------------------- */}
       {/* <TableInfo time={timeNow} data={data}/> */}
