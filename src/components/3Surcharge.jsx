@@ -7,7 +7,7 @@ const SurchargeBounds = () => {
 
 
   return (
-    <Overlay name="Surcharge Area">
+    <Overlay name="Surcharge Areas">
       <LayerGroup>
         {surchargeCoords.map((data, index) => (
           <Polygon
@@ -23,7 +23,6 @@ const SurchargeBounds = () => {
               {data.surcharge2}
             </Tooltip>
           </Polygon>
-          // console.log(data.coordinates)
         ))}
       </LayerGroup>
     </Overlay>

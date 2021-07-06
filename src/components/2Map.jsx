@@ -9,7 +9,7 @@ import {
   Popup,
 } from "react-leaflet";
 import MarkerClusterGroup from "react-leaflet-markercluster";
-import { defaultMap, jawgMap, oneMap } from "../mapLayouts/mapApi";
+import { jawgMap, oneMap, waymarkedTrails } from "../mapLayouts/mapApi";
 import TaxiIcon from "../mapLayouts/taxiIcon.png"
 import MarkerLocate from "./3MapMarker";
 import TaxiStands from "./3TaxiStand";
@@ -51,25 +51,22 @@ const reverseGeoCode = async (data) => {
       >
         <MarkerLocate />
         <LayersControl>
-          <BaseLayer name="Dark Map" checked>
+          <BaseLayer name="Dark Minimalist" checked>
             <TileLayer
               attribution={jawgMap.attribution}
               url={jawgMap.darkUrl + jawgMap.token}
             />
           </BaseLayer>
-          <BaseLayer name="Light Map">
+          <BaseLayer name={"Light & MRT Stations"}>
             <TileLayer
               attribution={jawgMap.attribution}
-              url={jawgMap.lightUrl + jawgMap.token}
+              url={jawgMap.sunnyUrl + jawgMap.token}
             />
           </BaseLayer>
-          <BaseLayer name="Map MRT Lines">
+          <BaseLayer name={"Dark & MRT Lines"}>
             <TileLayer attribution={oneMap.attribution} url={oneMap.darkUrl} />
           </BaseLayer>
 
-          <BaseLayer name="Default Map">
-            <TileLayer attribution={defaultMap.attribution} url={defaultMap.url} />
-          </BaseLayer>
           <Overlay name="Available Taxis" checked>
             <MarkerClusterGroup>
               {data.taxiCoords.map((taxi, index) => (
@@ -89,8 +86,14 @@ const reverseGeoCode = async (data) => {
               ))}
             </MarkerClusterGroup>
           </Overlay>
+          
           <TaxiStands />
+
           <SurchargeBounds />
+
+          <Overlay name="Cycling Paths">
+            <TileLayer attribution={waymarkedTrails.attribution} url={waymarkedTrails.url} />
+          </Overlay>
         </LayersControl>
       </MapContainer>
       {/* ----------------------------------------- */}
