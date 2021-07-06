@@ -1,29 +1,38 @@
 import "../App.css";
-import React from "react";
+import React , {useState} from "react";
 import L from 'leaflet';
 import {
   MapContainer,
   LayersControl,
   TileLayer,
   Marker,
+  Popup,
 } from "react-leaflet";
 import MarkerClusterGroup from "react-leaflet-markercluster";
-import { jawgMap, oneMap } from "../mapLayouts/mapApi";
+import { defaultMap, jawgMap, oneMap } from "../mapLayouts/mapApi";
 import TaxiIcon from "../mapLayouts/taxiIcon.png"
 import MarkerLocate from "./3MapMarker";
 import TaxiStands from "./3TaxiStand";
 import SurchargeBounds from "./3Surcharge";
+import { hereApi } from "../mapLayouts/mapApi";
 require('react-leaflet-markercluster/dist/styles.min.css'); 
 
 const Map = (props) => {
   const { data } = props;
   const { BaseLayer , Overlay } = LayersControl;
+  const [taxiAddress, setTaxiAddress] = useState("")
   const center = [1.34, 103.82];
   const taxiIcon = new L.Icon({
     iconUrl: TaxiIcon,
-    iconSize: [25, 25]
-
+    iconSize: [30, 30]
 });
+
+const reverseGeoCode = async (data) => {
+  const url = `https://revgeocode.search.hereapi.com/v1/revgeocode?at=${data[1]}%2C${data[0]}&lang=en-US&apikey=${hereApi.apiKey}`;
+  const res = await fetch(url);
+  const json = await res.json();
+  setTaxiAddress(json?.items?.[0]?.address?.label);
+};
 
   return (
     <div id="mapid">
@@ -54,8 +63,12 @@ const Map = (props) => {
               url={jawgMap.lightUrl + jawgMap.token}
             />
           </BaseLayer>
-          <BaseLayer name="Show MRT">
+          <BaseLayer name="Map MRT Lines">
             <TileLayer attribution={oneMap.attribution} url={oneMap.darkUrl} />
+          </BaseLayer>
+
+          <BaseLayer name="Default Map">
+            <TileLayer attribution={defaultMap.attribution} url={defaultMap.url} />
           </BaseLayer>
           <Overlay name="Available Taxis" checked>
             <MarkerClusterGroup>
@@ -65,7 +78,14 @@ const Map = (props) => {
                   key={index}
                   position={[taxi[1], taxi[0]]}
                   center={[taxi[1], taxi[0]]}
-                ></Marker>
+                  eventHandlers={{
+                    click: () => {
+                      reverseGeoCode(taxi);
+                    },
+                  }}
+                  >
+                  <Popup>{taxiAddress}</Popup>
+                </Marker>
               ))}
             </MarkerClusterGroup>
           </Overlay>
