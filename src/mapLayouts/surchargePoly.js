@@ -1,5 +1,9 @@
 const surchargeCoords = [
   {
+    name: "Changi Airport and Freight Center",
+    surcharge1:
+      "On Fridays, Saturdays or Sundays from 5pm to before midnight: $5.00",
+    surcharge2: "All other times: $3.00",
     coordinates: [
       [
         [103.9917912, 1.3703719],
@@ -17,37 +21,165 @@ const surchargeCoords = [
         [103.9884368, 1.3626731],
         [103.9794878, 1.34178],
         [103.9814038, 1.3358462],
-      ]
+      ],
     ],
-    name: "Changi Airport and Freight Center",
-    surcharge1:
-      "On Fridays, Saturdays or Sundays from 5pm to before midnight: $5.00",
-    surcharge2: "All other times: $3.00",
   },
 
-  //   changiAirport:
+  {
+    name: "Seletar Airport",
+    surcharge1: "Any time on any day: $3.00",
+    surcharge2: "",
+    coordinates: [
+      [
+        [103.8671214, 1.4243416],
+        [103.8641721, 1.4216502],
+        [103.8620506, 1.4179417],
+        [103.8616999, 1.4154515],
+        [103.8620432, 1.4131348],
+        [103.8614424, 1.4100887],
+        [103.860348, 1.4087587],
+        [103.8598665, 1.4063356],
+        [103.8642342, 1.4037449],
+        [103.8685858, 1.4076712],
+        [103.8734071, 1.4113822],
+        [103.8745199, 1.4146247],
+        [103.8766326, 1.4174775],
+        [103.8722642, 1.4228881],
+        [103.8671214, 1.4243416],
+      ],
+    ],
+  },
 
-  //   seletarAirport:
+  {
+    name: "Tanah Merah Ferry Terminal",
+    surcharge1: "Any time on any day: $3.00",
+    surcharge2: "* Only for Prime, Premier, SMRT and TransCab taxis",
+    coordinates: [
+      [
+        [103.9871997, 1.3149931],
+        [103.9877727, 1.313178],
+        [103.9904454, 1.3139815],
+        [103.989939, 1.3157557],
+        [103.9871997, 1.3149931],
+      ],
+    ],
+  },
 
-  //   sgExpo:
+  {
+    name: "Singapore Expo",
+    surcharge1: "Any time on any day: $2.00",
+    surcharge2: "",
+    coordinates: [
+      [
+        [103.956162, 1.3331678],
+        [103.9562907, 1.3318175],
+        [103.9592459, 1.3308887],
+        [103.9611815, 1.3335986],
+        [103.9622953, 1.3353656],
+        [103.959588, 1.3370415],
+        [103.9580451, 1.3349146],
+        [103.9571247, 1.3339938],
+        [103.956162, 1.3331678],
+      ],
+    ],
+  },
 
-  //   ferryTerminal:
+  {
+    name: "Marina Bay Cruise Center",
+    surcharge1: "From 7am to before 11am on the same day: $5.00",
+    surcharge2: "All other times $3.00",
+    coordinates: [
+      [
+        [103.8589372, 1.2692009],
+        [103.8580098, 1.2686197],
+        [103.8608425, 1.2647045],
+        [103.8617714, 1.2653784],
+        [103.8589372, 1.2692009],
+      ],
+    ],
+  },
 
-  //   cruiseCenter:
+  {
+    name: "Marina Bay Sands",
+    surcharge1:
+      "Any Sunday or public holiday from 6am to 5pm on the same day: $3.00",
+    surcharge2: "* Only for SMRT, Prime and Premier taxis",
+    coordinates: [
+      [
+        [103.8570355, 1.2820015],
+        [103.8581888, 1.2800976],
+        [103.859211, 1.279526],
+        [103.8602561, 1.2812677],
+        [103.8609425, 1.2830902],
+        [103.8612968, 1.2851102],
+        [103.861325, 1.2858818],
+        [103.859865, 1.2864549],
+        [103.8586028, 1.2846509],
+        [103.8570355, 1.2820015],
+      ],
+    ],
+  },
 
-  //   marinaBaysands:
+  {
+    name: "Resorts World Sentosa",
+    surcharge1: "Any time on any day: $3.00",
+    surcharge2: "",
+    coordinates: [
+      [
+        [103.8250283, 1.2510519],
+        [103.8271103, 1.253472],
+        [103.8211123, 1.2579562],
+        [103.819639, 1.2592402],
+        [103.8173323, 1.2567302],
+        [103.8202706, 1.2535784],
+        [103.8250283, 1.2510519],
+      ],
+    ],
+  },
 
-  //   resortsSentosa:
-
+  {
+    name: "City (Orchard - Anson - F1 Building - Rochor)",
+    surcharge1: "From 5pm to before midnight on any day: $3.00",
+    surcharge2: "",
+    coordinates: [
+      [
+        [103.8529917, 1.3036759],
+        [103.846845, 1.3069804],
+        [103.8428174, 1.3002529],
+        [103.839772, 1.3063328],
+        [103.8327012, 1.306307],
+        [103.8306737, 1.3038129],
+        [103.8303478, 1.2956989],
+        [103.8317637, 1.292308],
+        [103.8335579, 1.292136],
+        [103.8359303, 1.289583],
+        [103.8396017, 1.2895096],
+        [103.842101, 1.2882084],
+        [103.839048, 1.2807688],
+        [103.8420552, 1.2727741],
+        [103.8484984, 1.2729471],
+        [103.8511811, 1.2773214],
+        [103.8534342, 1.2758519],
+        [103.8559554, 1.2800244],
+        [103.8541015, 1.2840378],
+        [103.8549478, 1.2886],
+        [103.8645503, 1.288458],
+        [103.8639654, 1.293195],
+        [103.859489, 1.2971771],
+        [103.8529917, 1.3036759],
+      ],
+    ],
+  },
   //   cityArea:
 ];
 
+// nested forEach to reverse lat and long coorindates of surchargeCoords
 surchargeCoords.forEach((areaObj) =>
-    areaObj.coordinates.forEach((coordsArray) => {
-      coordsArray.forEach( data => {
-        data.reverse()
-      })
-    })
-  );
+  areaObj.coordinates.forEach((coordsArray) => {
+    coordsArray.forEach((data) => {
+      data.reverse();
+    });
+  })
+);
 
 export default surchargeCoords;

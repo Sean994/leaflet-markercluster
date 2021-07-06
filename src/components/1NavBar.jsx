@@ -18,7 +18,6 @@ const NavBar = (props) => {
         <span> TAXI - HAIBINTOU</span>
       </div>
       <div className="dataTooltip">
-        <span> Surcharge: 50%</span>
         <span> Available Taxis: {data?.taxiCount}</span>
         <span>
           Updated: {data?.timeStamp.slice(11, 16)} [{dateFormat(time)}]

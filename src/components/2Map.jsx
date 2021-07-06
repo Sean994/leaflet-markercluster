@@ -13,7 +13,7 @@ import TaxiIcon from "../mapLayouts/taxiIcon.png"
 import MarkerLocate from "./3MapMarker";
 import TaxiStands from "./3TaxiStand";
 import SurchargeBounds from "./3Surcharge";
-
+require('react-leaflet-markercluster/dist/styles.min.css'); 
 
 const Map = (props) => {
   const { data } = props;
