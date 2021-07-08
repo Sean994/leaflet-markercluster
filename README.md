@@ -51,11 +51,13 @@ Graph will render dataset from the last 60 minutes, with data points of 5 minute
 * https://developer.here.com/documentation/geocoding-search-api/api-reference-swagger.html - HERE Developers: Reverse Geocode (returns nearest address from geo coordinates request)
 2. GEOJson
 * https://data.gov.sg/dataset/lta-taxi-stop - GEOJson of Taxi Stand coordinates
+3. Information
 * https://www.lta.gov.sg/content/ltagov/en/getting_around/taxis_private_hire_cars/taxi_fares_payment_methods.html - Taxi surcharge areas, hours and fee
 * https://www.keene.edu/campus/maps/tool/ - Tool for drawing polygon boundaries on map, returns array of polygon's coordinates
-3. Art and Graphics
+4. Graphics
+4.1 Icons
 * https://www.flaticon.com/authors/surang - Icons for Taxi and Taxi Stand
-4. Map layers
+4.2 Map layers
 * https://www.jawg.io/en/ - Jawg Map Layer
 * https://www.onemap.gov.sg/home/ - OneMap Map Layer
 * https://waymarkedtrails.org/ - Cycling Paths Layer
