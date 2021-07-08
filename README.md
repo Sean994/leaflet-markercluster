@@ -1,9 +1,9 @@
 # Taxi - HaiBinTou  [8th July 2021]
 
 Project done during General Assembly Software Engineering Immersive (SEI-30 Singapore)   
-A web app that retrieves real-time taxi availability data from https://data.gov.sg/dataset/taxi-availability.  
-After collecting the location coordinates, it is displayed on an interactive map (built with React-Leaflet).   
-The coordinates are automicatically refrehed every minute and updated on the app.
+A web app that retrieves real-time taxi availability data with location coordinates, from https://data.gov.sg/dataset/taxi-availability.  
+Using the coordinates, each taxi is individually displayed on an interactive map (built with React-Leaflet).   
+The dataset is refreshed every minute and updated on the app.
 
 # Map Features (_url/Map_)
 ### Map all available taxis, arranged into cluster groups
