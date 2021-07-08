@@ -108,7 +108,7 @@ const DataViz = () => {
         <option value={30}>30 points</option>
         <option value={36}>36 points</option>
       </select>
-      <ResponsiveContainer className="lineGraph" width="85%" height="80%">
+      <ResponsiveContainer className="lineGraph" width="95%" height="80%">
         <LineChart
         //   width={500}
         //   height={100}
@@ -117,12 +117,12 @@ const DataViz = () => {
             top: 10,
             right: 30,
             left: 30,
-            bottom: 15,
+            bottom: 18,
           }}
         >
           <CartesianGrid horizontal={false} strokeDasharray="1 10" />
-          <XAxis tick={{ fill: 'grey' }} interval={1} tickSize={18} angle={-10} dataKey="time" height={20} />
-          <YAxis tick={{ fill: "#ffbf00" }} tickSize={18} unit=" Taxis"angle={-10} domain={[500, 5000]} />
+          <XAxis tick={{ fill: 'grey' }} interval={1} tickSize={18} angle={-15} dataKey="time" height={20} />
+          <YAxis tick={{ fill: "#ffbf00" }} tickSize={18} unit=" Taxis"angle={0} domain={[500, 5000]} />
           <Tooltip itemStyle={{ color: "black" }} />
           <Legend verticalAlign="top" height={36}/>
           <Line
