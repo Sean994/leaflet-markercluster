@@ -19,8 +19,8 @@ const NavBar = (props) => {
       </div>
       <div className="dataTooltip">
         <div className="taxiAvail"> 
-          <span class="taxiCount">{data?.taxiCount}</span> 
-          <span class="countDescription">Taxis <br/>Available </span>
+          <span className="taxiCount">{data?.taxiCount}</span> 
+          <span className="countDescription">Taxis <br/>Available </span>
         </div>
         <div className="updateTime">
           <span className="updateTimeText">

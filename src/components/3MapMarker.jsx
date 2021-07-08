@@ -1,4 +1,4 @@
-import { Marker, useMapEvents, Tooltip} from "react-leaflet";
+import { Marker, useMapEvents, Tooltip,} from "react-leaflet";
 import React, {useEffect, useState, useMemo } from "react";
 import { hereApi } from "../mapLayouts/mapApi";
 
@@ -11,7 +11,7 @@ const MarkerLocate = () => {
             setSelectedPosition([
                 e.latlng.lat,
                 e.latlng.lng
-            ]);         
+            ]);       
         },          
     })
     const eventHandlers = useMemo(
@@ -38,9 +38,10 @@ const MarkerLocate = () => {
 
     return (
         selectedPosition ? 
-            <Marker position={selectedPosition} draggable={true} eventHandlers={eventHandlers} >
-              <Tooltip direction="bottom" offset={[-15, 35]} opacity={1} permanent>
-              {popInfo}
+            <Marker position={selectedPosition} draggable={true} eventHandlers={eventHandlers}>
+              <Tooltip interactive = {true} direction="bottom" offset={[-15, 35]} permanent={true} opacity={0.8}>
+              {popInfo}<br/>
+              * Drag marker to change marked location
               </Tooltip>
             </Marker>
         : null

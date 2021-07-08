@@ -35,7 +35,7 @@ function App() {
   const getTaxi = async (dateTime) => {
     const url = `https://api.data.gov.sg/v1/transport/taxi-availability?`;
     // const date_time = apiDateString(dateTime);
-    console.log("fetching... at", dateTime);
+    console.log("fetching taxi coords ... at", dateTime);
     const res = await fetch(url + dateTime);
     const json = await res.json();
     const info = json.features[0];
@@ -64,7 +64,7 @@ function App() {
           <Redirect to="/Map" />
         </Route>
         <Route path="/Map">
-          <Map data={data} />
+          <Map data={data}  />
         </Route>
         <Route path="/Data">
           <DataViz />
