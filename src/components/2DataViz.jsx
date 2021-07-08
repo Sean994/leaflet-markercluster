@@ -19,7 +19,7 @@ const DataViz = () => {
   );
   const [data, setData] = useState([]);
   const [dataRes, setDataRes] = useState(1);
-  const [dataLength, setDataLength] = useState(12);
+  const [dataLength, setDataLength] = useState(6);
 
   const getData = (dataRes) => {
     const getTaxiAPI = (dataTime, x) => {
@@ -79,32 +79,34 @@ const DataViz = () => {
     <div id="dataWrapper">
       {/* <p>Hey what it doin babyy</p> */}
       <p id="lastUpdate">Graph last updated: {dataTime.slice(11, 19)}</p>
-      {/* <p>Data resolution (time between data points): {dataRes}</p> */}
+      {/* <p>Data resolution: {dataRes} Data length: {dataLength} </p> */}
+      <label className="DataVizLabel"> Data Resolution: </label>
       <select
         name="resolution"
         onChange={(event) => {
           setDataRes(event.target.value);
         }}
       >
-        <option value={1}> - Choose data resolution -</option>
+        <option value={1}>1 minute</option>
         <option value={5}>5 minutes</option>
         <option value={10}>10 minutes</option>
         <option value={30}>30 minutes</option>
         <option value={60}>60 minutes</option>
         <option value={120}>2 hours</option>
       </select>
+      <label className="DataVizLabel"> Data Length: </label>
       <select
         name="dataLength"
         onChange={(event) => {
           setDataLength(parseInt(event.target.value));
         }}
       >
-        <option value={1}> - Choose data points -</option>
         <option value={6}>6 points</option>
         <option value={12}>12 points</option>
         <option value={18}>18 points</option>
         <option value={24}>24 points</option>
         <option value={30}>30 points</option>
+        <option value={36}>36 points</option>
       </select>
       <ResponsiveContainer className="lineGraph" width="85%" height="80%">
         <LineChart
