@@ -66,4 +66,5 @@ Graph will render dataset from the last 60 minutes, with data points of 5 minute
 * https://leafletjs.com/ & https://react-leaflet.js.org/ - Interactive Mapping tool 
 * https://github.com/yuzhva/react-leaflet-markercluster -  Cluster grouping of Taxi Icons (Markers)
 * https://recharts.org/en-US - Data visualization and chart
-* https://reactjs.org/ - React on Javascript
+* https://momentjs.com/docs/ - Retrive local time in custom formats and manipulate time strings (3 hours ago, 24 minutes ago, etc.)
+* https://reactjs.org/ - React Javascript
