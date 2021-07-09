@@ -1,6 +1,6 @@
 import { Tooltip } from "react-leaflet";
 import { LayerGroup, Polygon, LayersControl } from "react-leaflet";
-import surchargeCoords from "../mapLayouts/surchargePoly";
+import surchargeCoords from "../mapLayouts/surchargeArea";
 
 const SurchargeBounds = () => {
   const { Overlay } = LayersControl;

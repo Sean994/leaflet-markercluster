@@ -77,7 +77,7 @@ const DataViz = () => {
 
   return (
     <div id="dataWrapper">
-      {/* <p>Hey what it doin babyy</p> */}
+      <p id="lastUpdate">Taxi Population in the last 3 days</p>
       <p id="lastUpdate">Graph last updated: {dataTime.slice(11, 19)}</p>
       {/* <p>Data resolution: {dataRes} Data length: {dataLength} </p> */}
       <label className="DataVizLabel"> Data Resolution: </label>
