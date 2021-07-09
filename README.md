@@ -1,9 +1,9 @@
 # Taxi - HaiBinTou  [8th July 2021]
 
 Project done during General Assembly Software Engineering Immersive (SEI-30 Singapore)   
-A web app that retrieves real-time taxi availability data from https://data.gov.sg/dataset/taxi-availability.  
-After collecting the location coordinates, it is displayed on an interactive map (built with React-Leaflet).   
-The coordinates are automicatically refrehed every minute and updated on the app.
+A web app that retrieves real-time taxi availability data with location coordinates, from https://data.gov.sg/dataset/taxi-availability.  
+Using the coordinates, each taxi is individually displayed on an interactive map (built with React-Leaflet).   
+The dataset is refreshed every minute and updated on the app.
 
 # Map Features (_url/Map_)
 ### Map all available taxis, arranged into cluster groups
@@ -51,14 +51,16 @@ Graph will render dataset from the last 60 minutes, with data points of 5 minute
 * https://developer.here.com/documentation/geocoding-search-api/api-reference-swagger.html - HERE Developers: Reverse Geocode (returns nearest address from geo coordinates request)
 2. GEOJson
 * https://data.gov.sg/dataset/lta-taxi-stop - GEOJson of Taxi Stand coordinates
+3. Information
 * https://www.lta.gov.sg/content/ltagov/en/getting_around/taxis_private_hire_cars/taxi_fares_payment_methods.html - Taxi surcharge areas, hours and fee
 * https://www.keene.edu/campus/maps/tool/ - Tool for drawing polygon boundaries on map, returns array of polygon's coordinates
-3. Art and Graphics
-* https://www.flaticon.com/authors/surang - Icons for Taxi and Taxi Stand
-4. Map layers
+4. Graphics  
+4.1 Icons
+* https://www.flaticon.com/authors/surang - Icons for Taxi and Taxi Stand  
+4.2 Map layers
 * https://www.jawg.io/en/ - Jawg Map Layer
 * https://www.onemap.gov.sg/home/ - OneMap Map Layer
-* https://waymarkedtrails.org/ - Cycling Paths Layer
+* https://waymarkedtrails.org/ - Cycling Paths Layer  
 
 # Built with
 * https://leafletjs.com/ & https://react-leaflet.js.org/ - Interactive Mapping tool 
