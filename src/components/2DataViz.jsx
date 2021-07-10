@@ -32,8 +32,8 @@ const DataViz = () => {
             {
               x: x,
               "Taxi Count": data.features[0].properties["taxi_count"],
-              time: dataTime.slice(11, 16),
-              date: dataTime.slice(0,10)
+              time: dataTime.slice(11, 16), //to check on parse fn in moment.js
+              date: dataTime.slice(0,10) 
             },
           ])
         )
