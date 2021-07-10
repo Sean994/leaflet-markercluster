@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import img from "../mapLayouts/github-logo2.png"
 
 const NavBar = (props) => {
   const { time, data } = props;
@@ -36,6 +37,7 @@ const NavBar = (props) => {
         <Link to="/Data">
           <span className="links">DATA</span>
         </Link>
+        <a href="https://github.com/Sean994/taxi-haibintou-leaflet"><img alt="github link"src={img}/></a>
       </div>
     </div>
   );

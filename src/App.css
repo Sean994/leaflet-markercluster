@@ -95,21 +95,23 @@
 
 .NavBar .links {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  align-items: center;
   cursor: pointer;
-  display: inline;
   transition: all 0.3s ease 0s;
   color: #edf0f1;
   font-family: 'Staatliches', cursive;
-  /* font-weight: bold; */
-  margin-right: 3%;
-  font-size: 36px;
+  font-size: 38px;
 }
 
-.links span {
-  margin: 30px;
-  /* text-decoration: none; */
-  color: #edf0f1;
+.links span{
+  margin-right: 15px;
+}
+
+.links img{
+  margin-right: 15px;
+  width: 32px;
+  height: 32px;
 }
 
 .NavBar .links:hover{
