@@ -8,7 +8,7 @@ const NavBar = (props) => {
   const dateFormat = (timeString) => {
     const year = timeString.substring(0, 4);
     const month = timeString.substring(5, 7);
-    const day = timeString.substring(9, 10);
+    const day = timeString.substring(8, 10);
 
     return new Date(year, month - 1, day).toDateString();
   };
