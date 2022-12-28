@@ -1,5 +1,5 @@
 export const fbqViewContent = () => {
-    window.fbq('track', 'Purchase')
+    window.fbq('track', 'ViewContent')
 }
 
 export const fbqTaxiDataCall = (a, b, c, d) => {
