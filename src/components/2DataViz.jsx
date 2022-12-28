@@ -12,7 +12,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import moment from "moment";
-import { fbqTaxiDataCall } from "../pixelComponents/fbPixel";
+import { fbqTaxiDataCall, fbqViewContent } from "../pixelComponents/fbPixel";
 
 const DataViz = () => {
   const [dataTime, setDataTime] = useState(
@@ -51,6 +51,7 @@ const DataViz = () => {
         const dataStartTime = timeInput.slice(11,16)
         const dataStartDate = timeInput.slice(0,10)
         fbqTaxiDataCall(dataLength, dataRes, dataStartTime, dataStartDate)
+        fbqViewContent()
       }
     }
 
@@ -63,7 +64,7 @@ const DataViz = () => {
   useEffect(() => {
     setDataTime(moment().format("YYYY-MM-DDTHH:mm:ss"));
     setData([]);
-    getData(dataRes);
+    getData(dataLength, dataRes);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ dataRes, dataLength]);
 
