@@ -46,11 +46,16 @@ const DataViz = () => {
         .subtract(x * dataRes, "minutes")
         .format("YYYY-MM-DDTHH:mm:ss");
       getTaxiAPI(timeInput, x);
+
+      if (x == 0){
+        const dataStartTime = timeInput.slice(11,16)
+        const dataStartDate = timeInput.slice(0,10)
+        fbqTaxiDataCall(dataLength, dataRes, dataStartTime, dataStartDate)
+      }
     }
 
-    const dataStartTime = data[dataLength-1].time
-    const dataStartDate = data[dataLength-1].date
-    fbqTaxiDataCall(dataLength, dataRes, dataStartTime, dataStartDate)
+
+
 
     console.log("this will show dataArray in resolution:", dataRes, data);
   };
