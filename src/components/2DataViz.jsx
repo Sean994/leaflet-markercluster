@@ -22,10 +22,9 @@ const DataViz = () => {
   const [dataRes, setDataRes] = useState(1);
   const [dataLength, setDataLength] = useState(6);
 
-  const getData = (dataRes) => {
+  const getData = (dataLength, dataRes) => {
     const getTaxiAPI = (dataTime, x) => {
       const url = `https://api.data.gov.sg/v1/transport/taxi-availability?date_time=`;
-      fbqTaxiDataCall(dataTime)
       fetch(url + dataTime)
         .then((response) => response.json())
         .then((data) =>
@@ -48,6 +47,11 @@ const DataViz = () => {
         .format("YYYY-MM-DDTHH:mm:ss");
       getTaxiAPI(timeInput, x);
     }
+
+    const dataStartTime = data[dataLength-1].time
+    const dataStartDate = data[dataLength-1].date
+    fbqTaxiDataCall(dataLength, dataRes, dataStartTime, dataStartDate)
+
     console.log("this will show dataArray in resolution:", dataRes, data);
   };
 
