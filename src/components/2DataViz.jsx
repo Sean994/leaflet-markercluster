@@ -12,6 +12,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import moment from "moment";
+import { fbqTaxiDataCall } from "../pixelComponents/fbPixel";
 
 const DataViz = () => {
   const [dataTime, setDataTime] = useState(
@@ -24,6 +25,7 @@ const DataViz = () => {
   const getData = (dataRes) => {
     const getTaxiAPI = (dataTime, x) => {
       const url = `https://api.data.gov.sg/v1/transport/taxi-availability?date_time=`;
+      fbqTaxiDataCall(dataTime)
       fetch(url + dataTime)
         .then((response) => response.json())
         .then((data) =>
@@ -33,7 +35,7 @@ const DataViz = () => {
               x: x,
               "Taxi Count": data.features[0].properties["taxi_count"],
               time: dataTime.slice(11, 16), //to check on parse fn in moment.js
-              date: dataTime.slice(0,10) 
+              date: dataTime.slice(0,10)
             },
           ])
         )
@@ -77,7 +79,7 @@ const DataViz = () => {
 
   return (
     <div id="dataWrapper">
-      <p id="lastUpdate">Taxi Population in the last 3 days</p>
+      <p id="lastUpdate">Taxi Population; up to the last 3 days</p>
       <p id="lastUpdate">Graph last updated: {dataTime.slice(11, 19)}</p>
       {/* <p>Data resolution: {dataRes} Data length: {dataLength} </p> */}
       <label className="DataVizLabel"> Data Resolution: </label>
